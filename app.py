@@ -1,8 +1,9 @@
 import streamlit as st 
 import pandas as pd
 import altair as alt
-st.markdown(''' # **Welcome**''')
 
+st.markdown(''' # **Welcome**''')
+st.sidebar.header("NBA App :football:")
 df= pd.read_csv('nba-2.csv')
 
 st.write(df.head())

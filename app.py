@@ -3,8 +3,9 @@ import pandas as pd
 import altair as alt
 
 st.markdown(''' # **Welcome** :football: :smile:''')
+st.markdown("...")
 st.write("Let's take a quick overlook at the NBA dataset")
-st.sidebar.header("NBA App :football:")
+#st.sidebar.header("NBA App :football:")
 df= pd.read_csv('nba-2.csv')
 
 @st.cache_data

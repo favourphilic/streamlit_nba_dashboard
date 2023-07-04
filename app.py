@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 
-st.markdown(''' # **Welcome**''')
+st.markdown(''' # **Welcome** :football: :smile:''')
 st.write("Let's take a quick overlook at the NBA dataset")
 st.sidebar.header("NBA App :football:")
 df= pd.read_csv('nba-2.csv')
@@ -44,3 +44,11 @@ with col2:
   st.altair_chart(pc, use_container_width=True)
   st.markdown(f"""  * Each position has similar player distribution """)
   st.markdown(f"""  * Although, players in the central position are fewer. """)
+
+htwt=alt.Chart(df).mark_circle().encode(
+    alt.X('Height').scale(zero=False),
+    alt.Y('Weight').scale(zero=False, padding=1),
+    color='Position',
+    #size='petalWidth'
+)
+st.altair_chart(htwt, use_container_width=True)

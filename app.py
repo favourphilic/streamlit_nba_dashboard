@@ -45,6 +45,7 @@ with col2:
   st.markdown(f"""  * Each position has similar player distribution """)
   st.markdown(f"""  * Although, players in the central position are fewer. """)
 
+st.subheader("Sactter plot of Height vs Weight")
 htwt=alt.Chart(df).mark_circle().encode(
     alt.X('Height').scale(zero=False),
     alt.Y('Weight').scale(zero=False, padding=1),
@@ -52,3 +53,12 @@ htwt=alt.Chart(df).mark_circle().encode(
     #size='petalWidth'
 )
 st.altair_chart(htwt, use_container_width=True)
+
+st.subheader("Scatter plot of Age vs Salary")
+agsa=alt.Chart(df).mark_circle().encode(
+    alt.X('Age').scale(zero=False),
+    alt.Y('Salary').scale(zero=False, padding=1),
+    color='Position',
+    #size='petalWidth'
+)
+st.altair_chart(agsa, use_container_width=True)

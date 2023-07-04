@@ -103,6 +103,8 @@ tm10=tm.sort_values(by='Salary' ,ascending=False)[:10]
 tm_grp = alt.Chart(tm10).mark_bar().encode(
     x='mean(Salary)',
     y='Team',
-    color='Team'
+    #color='Team'
 )
+
+
 st.altair_chart(tm_grp, use_container_width=True)
